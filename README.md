@@ -234,7 +234,7 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 
 ## Contact
 
-Project Link: [https://github.com/blocklinklabs/http3](https://github.com/blocklinklabs/http3)
+Project Link: 
 
 ## Acknowledgements
 
