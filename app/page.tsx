@@ -11,6 +11,8 @@ import {
   Search,
   Zap,
 } from "lucide-react";
+import DeveloperTools from "@/components/DeveloperTools";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const features = [
@@ -72,14 +74,14 @@ export default function Home() {
             Hébergez gratuitement vos sites web simples, comme des calculateurs
             et des convertisseurs d’unités, directement sur la blockchain ! Zéro
             frais d’hébergement, aucune date d’expiration. Préservez vos projets
-            web pour toujours avec PowerHost, l’hébergement décentralisé.
+            web pour toujours avec HTTP3HOST, l’hébergement décentralisé.
           </p>
           <Link href={"/dashboard"}>
             <Button size="lg" className="mr-4">
               Déployez gratuitement maintenant <ArrowRight className="ml-2" />
             </Button>
           </Link>
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="outline" className="mt-3">
             Découvrez comment ça fonctionne
           </Button>
         </header>
@@ -104,8 +106,10 @@ export default function Home() {
               ))}
             </div>
           </section>
-          {/* <DeveloperTools />
-          <UserAccess /> */}
+          <DeveloperTools />
+          {/* <UserAccess /> */}
+
+          <Footer />
 
           {/* New sections can be added here for Marketplace, Governance, etc. */}
         </main>
