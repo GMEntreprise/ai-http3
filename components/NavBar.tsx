@@ -18,17 +18,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { createOrUpdateUser } from "@/config/db/actions";
 
 export default function Navbar() {
   const { login, logout, authenticated, user } = usePrivy();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showEmailConfirmModal, setShowEmailConfirmModal] = useState(false);
 
-  // useEffect(() => {
-  //   if (authenticated && user) {
-  //     handleUserAuthenticated();
-  //   }
-  // }, [authenticated, user]);
+  useEffect(() => {
+    if (authenticated && user) {
+      handleUserAuthenticated();
+    }
+  }, [authenticated, user]);
 
   useEffect(() => {
     const hasClosedModal = localStorage.getItem("emailConfirmModalClosed");
@@ -39,22 +40,22 @@ export default function Navbar() {
 
   console.log("all about the users", user);
 
-  // const handleUserAuthenticated = async () => {
-  //   if (user && user.wallet?.address) {
-  //     try {
-  //       await createOrUpdateUser(
-  //         user.wallet.address,
-  //         user.email?.address || ""
-  //       );
-  //       const hasClosedModal = localStorage.getItem("emailConfirmModalClosed");
-  //       if (!hasClosedModal) {
-  //         setShowEmailConfirmModal(true);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error updating user information:", error);
-  //     }
-  //   }
-  // };
+  const handleUserAuthenticated = async () => {
+    if (user && user.wallet?.address) {
+      try {
+        await createOrUpdateUser(
+          user.wallet.address,
+          user.email?.address || ""
+        );
+        const hasClosedModal = localStorage.getItem("emailConfirmModalClosed");
+        if (!hasClosedModal) {
+          setShowEmailConfirmModal(true);
+        }
+      } catch (error) {
+        console.error("Error updating user information:", error);
+      }
+    }
+  };
 
   const handleAuth = () => {
     if (authenticated) {

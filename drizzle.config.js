@@ -6,7 +6,8 @@ export default defineConfig({
   schema: "./config/db/schema.ts",
   out: "./drizzle",
   dbCredentials: {
-    url: process.env.NEXT_DATABASE_URL,
-    connectionString: process.env.NEXT_DATABASE_URL,
+    url: "postgresql://neondb_owner:Ttiz1BxQE6fl@ep-wild-glitter-a8toj6iw.eastus2.azure.neon.tech/neondb?sslmode=require",
+    connectionString:
+      "postgresql://neondb_owner:Ttiz1BxQE6fl@ep-wild-glitter-a8toj6iw.eastus2.azure.neon.tech/neondb?sslmode=require",
   },
 });
