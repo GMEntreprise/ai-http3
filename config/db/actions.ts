@@ -3,7 +3,7 @@ config();
 
 import { db } from "./dbConfig";
 import { Users, Webpages, Tokens, Deployments } from "./schema";
-import { eq, sql, desc } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { create } from "@web3-storage/w3up-client";
 import { ethers } from "ethers";
 import WebpageStorageABI from "../db/WebpageStorage.json";
@@ -299,6 +299,8 @@ async function updateNameContent(
     revision = await Name.resolve(name);
   } catch (error) {
     // If there's no existing revision, create the initial one
+    console.error(error);
+
     revision = await Name.v0(name, value);
   }
 

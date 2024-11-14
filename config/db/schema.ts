@@ -24,6 +24,15 @@ export const Webpages = pgTable("webpages", {
   cid: varchar("cid", { length: 255 }).notNull(),
 });
 
+export const Tokens = pgTable("tokens", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").references(() => Users.id),
+  balance: integer("balance").notNull().default(0),
+  stakedAmount: integer("staked_amount").notNull().default(0),
+  rewardsEarned: integer("rewards_earned").notNull().default(0),
+});
+
+
 export const Deployments = pgTable("deployments", {
   id: serial("id").primaryKey(),
   userId: integer("user_id").references(() => Users.id),
