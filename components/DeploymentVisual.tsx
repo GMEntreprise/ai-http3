@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Copy, Code, Eye } from "lucide-react";
+import IPFSContentRenderer from "./IPFSContentRenderer";
 
 interface DeploymentVisualProps {
   deployedUrl: string;
@@ -16,7 +17,7 @@ export default function DeploymentVisual({
   const [isLoading, setIsLoading] = useState(false);
   const [showIPFSContent, setShowIPFSContent] = useState(false);
 
-  const handleCopyzUrl = () => {
+  const handleCopyUrl = () => {
     navigator.clipboard.writeText(deployedUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -29,8 +30,8 @@ export default function DeploymentVisual({
       const text = await response.text();
       setContent(text);
     } catch (error) {
-      console.error("Failed to fetch content:", error);
-      setContent("Error fetching content. Please try again.");
+      console.error("Échec du chargement du contenu :", error);
+      setContent("Erreur lors du chargement du contenu. Veuillez réessayer.");
     } finally {
       setIsLoading(false);
     }
@@ -50,23 +51,23 @@ export default function DeploymentVisual({
 
   return (
     <div className="deployment-visual text-white">
-      <h2 className="text-2xl font-semibold mb-4">Deployment Status</h2>
+      <h2 className="text-2xl font-semibold mb-4">Statut du Déploiement</h2>
       <div className="flex items-center justify-center mb-4">
         <p className="text-muted-foreground mr-2">
-          Your content has been deployed successfully!
+          Votre contenu a été déployé avec succès !
         </p>
         <Button
           variant="outline"
           size="sm"
           className="flex items-center"
-          onClick={handleCopyzUrl}
+          onClick={handleCopyUrl}
         >
           {copied ? (
             <Check className="h-4 w-4 mr-2" />
           ) : (
             <Copy className="h-4 w-4 mr-2" />
           )}
-          {copied ? "Copied!" : "Copy URL"}
+          {copied ? "Copié !" : "Copier l'URL"}
         </Button>
       </div>
       <div className="flex justify-center space-x-4 mb-4">
@@ -74,17 +75,17 @@ export default function DeploymentVisual({
           onClick={handleViewPreview}
           variant={showPreview ? "default" : "outline"}
         >
-          <Eye className="h-4 w-4 mr-2" /> View Preview
+          <Eye className="h-4 w-4 mr-2" /> Voir l&lsquo;Aperçu
         </Button>
         <Button
           onClick={handleViewSourceCode}
           variant={showSourceCode ? "default" : "outline"}
         >
-          <Code className="h-4 w-4 mr-2" /> View Source Code
+          <Code className="h-4 w-4 mr-2" /> Voir le Code Source
         </Button>
       </div>
       <p>
-        IPFS URL:{" "}
+        URL IPFS :{" "}
         <a
           href="#"
           onClick={(e) => {
@@ -97,11 +98,11 @@ export default function DeploymentVisual({
       </p>
       {showIPFSContent && (
         <div className="ipfs-content-preview">
-          <h3>IPFS Content Preview:</h3>
-          {/* <IPFSContentRenderer ipfsUrl={deployedUrl} /> */}
+          <h3>Aperçu du Contenu IPFS :</h3>
+          <IPFSContentRenderer ipfsUrl={deployedUrl} />
         </div>
       )}
-      {isLoading && <p>Loading content...</p>}
+      {isLoading && <p>Chargement du contenu...</p>}
       {!isLoading && showPreview && (
         <div className="w-full aspect-video rounded-lg overflow-hidden border border-border bg-white text-black p-4">
           <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -115,7 +116,7 @@ export default function DeploymentVisual({
         </div>
       )}
       <div className="mt-4 p-4 text-white bg-black text-left">
-        <h3 className="font-semibold">Deployed URL:</h3>
+        <h3 className="font-semibold">URL Déployée :</h3>
         <p>{deployedUrl}</p>
       </div>
     </div>
