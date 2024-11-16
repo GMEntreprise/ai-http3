@@ -11,6 +11,7 @@
     "db:studio": "npx drizzle-kit studio"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "@neondatabase/serverless": "^0.10.2",
     "@privy-io/react-auth": "^1.92.6",
     "@radix-ui/react-dialog": "^1.1.2",
