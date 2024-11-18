@@ -80,58 +80,58 @@ const chartConfig = {
 };
 
 export default function Dashboard() {
-  const [sites, setSites] = useState([
-    {
-      id: 1,
-      name: "My First Site",
-      url: "https://http3.io/abc123",
-      chain: "Ethereum",
-      status: "Active",
-      traffic: 1500,
-      uptime: 99.9,
-      lastDeployed: "2023-03-15 14:30",
-    },
-    {
-      id: 2,
-      name: "Blog",
-      url: "https://http3.io/def456",
-      chain: "Polygon",
-      status: "Active",
-      traffic: 3000,
-      uptime: 100,
-      lastDeployed: "2023-03-14 09:15",
-    },
-    {
-      id: 3,
-      name: "DApp Frontend",
-      url: "https://http3.io/ghi789",
-      chain: "Solana",
-      status: "Maintenance",
-      traffic: 500,
-      uptime: 98.5,
-      lastDeployed: "2023-03-13 18:45",
-    },
-  ]);
+  // const [sites, setSites] = useState([
+  //   {
+  //     id: 1,
+  //     name: "My First Site",
+  //     url: "https://http3.io/abc123",
+  //     chain: "Ethereum",
+  //     status: "Active",
+  //     traffic: 1500,
+  //     uptime: 99.9,
+  //     lastDeployed: "2023-03-15 14:30",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Blog",
+  //     url: "https://http3.io/def456",
+  //     chain: "Polygon",
+  //     status: "Active",
+  //     traffic: 3000,
+  //     uptime: 100,
+  //     lastDeployed: "2023-03-14 09:15",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "DApp Frontend",
+  //     url: "https://http3.io/ghi789",
+  //     chain: "Solana",
+  //     status: "Maintenance",
+  //     traffic: 500,
+  //     uptime: 98.5,
+  //     lastDeployed: "2023-03-13 18:45",
+  //   },
+  // ]);
 
-  const handleRename = (id: number, newName: string) => {
-    setSites(
-      sites.map((site) => (site.id === id ? { ...site, name: newName } : site))
-    );
-  };
+  // const handleRename = (id: number, newName: string) => {
+  //   setSites(
+  //     sites.map((site) => (site.id === id ? { ...site, name: newName } : site))
+  //   );
+  // };
 
-  const dummyTokenEconomy = {
-    balance: 1000,
-    staked: 500,
-    rewards: 50,
-    transactions: [
-      { id: 1, type: "Stake", amount: 100, date: "2023-03-15 08:30" },
-      { id: 2, type: "Reward", amount: 10, date: "2023-03-14 00:00" },
-      { id: 3, type: "Unstake", amount: -50, date: "2023-03-13 14:45" },
-    ],
-  };
+  // const dummyTokenEconomy = {
+  //   balance: 1000,
+  //   staked: 500,
+  //   rewards: 50,
+  //   transactions: [
+  //     { id: 1, type: "Stake", amount: 100, date: "2023-03-15 08:30" },
+  //     { id: 2, type: "Reward", amount: 10, date: "2023-03-14 00:00" },
+  //     { id: 3, type: "Unstake", amount: -50, date: "2023-03-13 14:45" },
+  //   ],
+  // };
 
   const [code, setCode] = useState(``);
-  const [githubUrl, setGithubUrl] = useState("");
+  // const [githubUrl, setGithubUrl] = useState("");
   const [deployedUrl, setDeployedUrl] = useState("");
   const [isDeploying, setIsDeploying] = useState(false);
   const [livePreview, setLivePreview] = useState(code);
@@ -145,7 +145,7 @@ export default function Dashboard() {
   const [w3name, setW3name] = useState<string | null>(null);
   const [userWebpages, setUserWebpages] = useState<Webpage[]>([]);
   const [selectedWebpage, setSelectedWebpage] = useState<Webpage | null>(null);
-  const router = useRouter();
+  // const router = useRouter();
 
   const [visitorData, setVisitorData] = useLocalStorage("visitorData", {
     desktop: 0,
