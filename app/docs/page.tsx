@@ -1,17 +1,7 @@
 "use client";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Globe,
-  Cpu,
-  Zap,
-  Search,
-  BarChart,
-  Network,
-} from "lucide-react";
+import { Globe, Cpu, Zap, Search, BarChart, Network } from "lucide-react";
 
 export default function DocsPage() {
   return (
@@ -84,7 +74,7 @@ export default function DocsPage() {
                         </h3>
                         <p className="text-sm text-gray-400">
                           Déploiements automatiques depuis GitHub avec des liens
-                          d'aperçu instantanés et contrôle de version.
+                          d&apos;aperçu instantanés et contrôle de version.
                         </p>
                       </div>
                     </li>
@@ -93,8 +83,8 @@ export default function DocsPage() {
                       <div>
                         <h3 className="font-semibold">Générateur de Site AI</h3>
                         <p className="text-sm text-gray-400">
-                          Générez un site web à l'aide de l'IA et déployez-le
-                          directement sur la blockchain.
+                          Générez un site web à l&apos;aide de l&apos;IA et
+                          déployez-le directement sur la blockchain.
                         </p>
                       </div>
                     </li>
@@ -145,9 +135,9 @@ export default function DocsPage() {
                 <CardContent className="p-4">
                   <p className="text-white">
                     Pour commencer avec HTTP3, créez un compte. Utilisez le
-                    bouton "Connexion" dans la barre de navigation pour vous
-                    connecter avec votre portefeuille Web3 et profiter d'une
-                    expérience fluide sur la blockchain.
+                    bouton &ldquo;Connexion&quot; dans la barre de navigation
+                    pour vous connecter avec votre portefeuille Web3 et profiter
+                    d&apos;une expérience fluide sur la blockchain.
                   </p>
                 </CardContent>
               </Card>
@@ -165,10 +155,10 @@ export default function DocsPage() {
                   </p>
                   <ol className="list-decimal list-inside space-y-2 text-white">
                     <li>Accédez au tableau de bord</li>
-                    <li>Cliquez sur l'onglet "Déployer"</li>
+                    <li>Cliquez sur l&lsquo;onglet &ldquo;Déployer&ldquo;</li>
                     <li>Entrez votre domaine et le contenu de votre site</li>
                     <li>
-                      Cliquez sur "Déployer sur HTTP3" et confirmez la
+                      Cliquez sur &#34;Déployer sur HTTP3&#34; et confirmez la
                       transaction dans votre portefeuille
                     </li>
                     <li>Attendez la fin du déploiement</li>
@@ -193,7 +183,9 @@ export default function DocsPage() {
                       Visualisez tous vos sites déployés dans le tableau de bord
                     </li>
                     <li>Modifiez et mettez à jour vos sites existants</li>
-                    <li>Surveillez l'état du déploiement et les liens IPFS</li>
+                    <li>
+                      Surveillez l&apos;état du déploiement et les liens IPFS
+                    </li>
                     <li>
                       Utilisez le gestionnaire CI/CD pour des mises à jour
                       automatiques
