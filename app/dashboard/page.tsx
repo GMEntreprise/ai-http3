@@ -29,7 +29,6 @@ import {
 } from "lucide-react";
 
 import { usePrivy } from "@privy-io/react-auth";
-import { useRouter } from "next/navigation";
 import { Sidebar } from "@/components/ui/sidebar";
 
 import { SearchEngine } from "@/components/SearchEngine";
@@ -41,6 +40,7 @@ import {
   getUserIdByEmail,
   getUserWebpages,
   initializeClients,
+  updateWebpageContent,
 } from "@/config/db/actions";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import DeploymentVisual from "@/components/DeploymentVisual";

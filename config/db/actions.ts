@@ -5,7 +5,7 @@ import { db } from "./dbConfig";
 import { Users, Webpages, Tokens, Deployments } from "./schema";
 import { eq, desc } from "drizzle-orm";
 import { create } from "@web3-storage/w3up-client";
-import { ethers } from "ethers";
+import * as ethers from "ethers";
 import WebpageStorageABI from "../db/WebpageStorage.json";
 import * as Name from "w3name";
 

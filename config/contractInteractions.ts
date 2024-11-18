@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import * as ethers from "ethers";
 import WebpageStorageABI from "../artifacts/contracts/WebpageStorage.sol/WebpageStorage.json";
 
 const contractAddress = "YOUR_CONTRACT_ADDRESS_HERE";
