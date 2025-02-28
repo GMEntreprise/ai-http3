@@ -89,45 +89,55 @@ export default function CICDManager({
       <CardHeader>
         <CardTitle className="flex items-center">
           <GitBranch className="mr-2 h-6 w-6" />
-          CI/CD Manager
+          Gestionnaire CI/CD
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <div className="space-y-6">
+          {/* Section Domaine */}
           <div>
-            <Label htmlFor="domain">Domain</Label>
+            <Label htmlFor="domain">Domaine</Label>
             <Input id="domain" value={domain} disabled />
           </div>
+
+          {/* Section Contenu */}
           <div>
-            <Label htmlFor="content">Website Content</Label>
+            <Label htmlFor="content">Contenu du site web</Label>
             <Textarea
               id="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={10}
+              placeholder="Entrez le contenu à déployer..."
               className="font-mono"
             />
           </div>
+
+          {/* Bouton de mise à jour */}
           <Button onClick={handleUpdate} disabled={isUpdating}>
             {isUpdating ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Updating...
+                Mise à jour...
               </>
             ) : (
               <>
                 <RefreshCw className="mr-2 h-4 w-4" />
-                Update Website
+                Mettre à jour le site
               </>
             )}
           </Button>
+
+          {/* Révision actuelle */}
           {currentRevision && (
-            <div className="mt-4 p-4 bg-secondary rounded-lg">
+            <div className="mt-6 p-4 bg-secondary rounded-lg">
               <p className="text-sm">
-                Current IPNS: <code>{name?.toString()}</code>
+                <strong>IPNS Actuel : </strong>
+                <code>{name?.toString()}</code>
               </p>
               <p className="text-sm">
-                Current Value: <code>{currentRevision.value}</code>
+                <strong>Valeur actuelle : </strong>
+                <code>{currentRevision.value}</code>
               </p>
             </div>
           )}
